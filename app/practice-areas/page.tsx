@@ -8,7 +8,7 @@ import { practiceAreas } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Practice Areas",
   description:
-    "Criminal law, matrimonial & family law, service law, PMLA & special legislation, and civil litigation — handled end to end across Indian courts.",
+    "Criminal law, matrimonial & family law, service law, PMLA & special legislation, and civil litigation - handled end to end across Indian courts.",
 };
 
 export default function PracticeAreasPage() {
@@ -17,7 +17,7 @@ export default function PracticeAreasPage() {
       <PageHero
         eyebrow="Practice Areas"
         title="Focused litigation, handled end to end"
-        intro="We concentrate on five core areas of dispute. Within each, we act at every stage — from first advice and interim relief through trial, appeal, and enforcement."
+        intro="We concentrate on five core areas of dispute. Within each, we act at every stage - from first advice and interim relief through trial, appeal, and enforcement."
       />
 
       {/* Quick index */}

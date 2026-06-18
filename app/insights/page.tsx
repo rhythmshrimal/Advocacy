@@ -8,7 +8,7 @@ import { getAllInsights } from "@/lib/insights";
 export const metadata: Metadata = {
   title: "Insights",
   description:
-    "Commentary and notes on legal developments from Shrimal & Associates — across criminal, matrimonial, service, and economic-offence law.",
+    "Commentary and notes on legal developments from Shrimal & Associates - across criminal, matrimonial, service, and economic-offence law.",
 };
 
 export default function InsightsPage() {
@@ -19,7 +19,7 @@ export default function InsightsPage() {
       <PageHero
         eyebrow="Insights"
         title="Notes on the law, in plain language"
-        intro="Periodic commentary on legal developments and practical guidance. Written to inform — not as legal advice for any specific matter."
+        intro="Periodic commentary on legal developments and practical guidance. Written to inform - not as legal advice for any specific matter."
       />
 
       <section className="container-px py-20 lg:py-28">
@@ -66,8 +66,6 @@ export default function InsightsPage() {
         )}
 
         <p className="mt-12 max-w-2xl text-sm leading-relaxed text-slate-light">
-          Articles live as Markdown/MDX files in{" "}
-          <code className="rounded bg-navy/5 px-1.5 py-0.5 text-navy">content/insights/</code>.
           Add a new <code className="rounded bg-navy/5 px-1.5 py-0.5 text-navy">.mdx</code>{" "}
           file with the required frontmatter to publish; set{" "}
           <code className="rounded bg-navy/5 px-1.5 py-0.5 text-navy">draft: true</code>{" "}

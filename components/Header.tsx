@@ -59,7 +59,7 @@ export default function Header() {
         <Logo tone="light" />
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-7 lg:ml-auto lg:flex" aria-label="Primary">
           {nav.map((item) => {
             const active =
               item.href === "/"
@@ -82,16 +82,7 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="flex items-center gap-3">
-          {/* Phone CTA — always visible for clients in urgent situations */}
-          <a
-            href={`tel:${site.contact.phoneHref}`}
-            className="hidden items-center gap-2 rounded-sm border border-gold/60 px-4 py-2.5 text-sm font-semibold text-gold transition-colors duration-300 hover:bg-gold hover:text-white sm:inline-flex"
-          >
-            <PhoneIcon className="h-4 w-4" />
-            <span>{site.contact.phoneDisplay}</span>
-          </a>
-
+        <div className="flex items-center gap-3 lg:hidden">
           {/* Mobile menu toggle */}
           <button
             type="button"

@@ -26,7 +26,7 @@ export default function HomePage() {
                   A litigation practice built on <span className="text-gold">trust</span>.
                 </>
               }
-              intro="Clients come to us at difficult moments — facing investigation, a contested separation, or a career on the line. Our role is to bring clarity, strategy, and steady advocacy to matters that matter most."
+              intro="Clients come to us at difficult moments - facing investigation, a contested separation, or a career on the line. Our role is to bring clarity, strategy, and steady advocacy to matters that matter most."
             />
             <Reveal delay={0.1}>
               <Link href="/about" className="link-underline mt-8">
@@ -59,7 +59,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Practice Areas"
             title="Where we focus"
-            intro="Five core areas of litigation, handled end to end — from first advice through to the final forum."
+            intro="Five core areas of litigation, handled end to end - from first advice through to the final forum."
             align="center"
             className="mb-14"
           />
@@ -113,7 +113,7 @@ export default function HomePage() {
             <span className="eyebrow mb-6 justify-center">{site.brandLine}</span>
             <p className="font-serif text-2xl font-medium leading-snug text-offwhite sm:text-3xl lg:text-[2.4rem] lg:leading-[1.25]">
               “We measure our work not by the cases we take, but by the trust our
-              clients place in us — and the outcomes we secure on their behalf.”
+              clients place in us - and the outcomes we secure on their behalf.”
             </p>
           </Reveal>
         </div>
@@ -131,7 +131,7 @@ export default function HomePage() {
               <SectionHeading
                 tone="light"
                 eyebrow="Experience"
-                title="Tested across forums — trial to apex court"
+                title="Tested across forums - trial to apex court"
                 intro="Representative, confidentiality-safe examples of the matters we handle."
               />
             </div>

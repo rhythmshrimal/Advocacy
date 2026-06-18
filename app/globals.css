@@ -29,7 +29,7 @@
     text-wrap: balance;
   }
 
-  /* Honour reduced-motion preferences — disable smooth scroll & transitions */
+  /* Honour reduced-motion preferences - disable smooth scroll & transitions */
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;

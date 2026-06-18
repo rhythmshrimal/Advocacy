@@ -2,7 +2,7 @@ import { practiceAreas, site } from "@/lib/site";
 
 /**
  * LegalService (an Organization subtype) structured data for the homepage.
- * Values are pulled from lib/site.ts — update contact details there.
+ * Values are pulled from lib/site.ts - update contact details there.
  */
 export default function OrganizationSchema() {
   const base = site.url.replace(/\/$/, "");

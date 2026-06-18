@@ -16,12 +16,12 @@ const approach = [
   {
     step: "01",
     title: "Listen & assess",
-    body: "We begin by understanding your situation in full and giving you a frank assessment of where you stand — risks, options, and likely timelines.",
+    body: "We begin by understanding your situation in full and giving you a frank assessment of where you stand - risks, options, and likely timelines.",
   },
   {
     step: "02",
     title: "Build the strategy",
-    body: "We design a focused litigation strategy tailored to your objectives, the forum, and the facts — not a one-size-fits-all template.",
+    body: "We design a focused litigation strategy tailored to your objectives, the forum, and the facts - not a one-size-fits-all template.",
   },
   {
     step: "03",
@@ -64,7 +64,7 @@ export default function AboutPage() {
               </p>
               <p>
                 We keep our practice deliberately focused. That focus lets us go
-                deep — on the law, on the facts, and on the human realities behind
+                deep - on the law, on the facts, and on the human realities behind
                 every matter we accept.
               </p>
             </Reveal>

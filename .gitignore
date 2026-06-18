@@ -20,7 +20,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# env files — never commit real SMTP credentials
+# env files - never commit real SMTP credentials
 .env
 .env.local
 .env*.local

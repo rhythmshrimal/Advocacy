@@ -26,7 +26,7 @@ export async function generateMetadata({
     title: area.title,
     description: area.description,
     openGraph: {
-      title: `${area.title} — ${site.name}`,
+      title: `${area.title} - ${site.name}`,
       description: area.description,
     },
   };
@@ -144,7 +144,7 @@ export default async function PracticeAreaPage({
           <Reveal>
             <span className="eyebrow mb-4">Common Questions</span>
             <h2 className="font-serif text-3xl font-semibold text-navy sm:text-4xl">
-              {area.title} — frequently asked
+              {area.title} - frequently asked
             </h2>
           </Reveal>
           <div className="mt-10 divide-y divide-navy/10">

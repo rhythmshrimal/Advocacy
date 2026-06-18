@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Shrimal & Associates. Call, email, or send us a message about your matter — we offer confidential consultations.",
+    "Get in touch with Shrimal & Associates. Call, email, or send us a message about your matter - we offer confidential consultations.",
 };
 
 function DetailRow({

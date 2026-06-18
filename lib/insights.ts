@@ -92,7 +92,7 @@ export function getAuthor(name?: string): Author {
 }
 
 /**
- * Related insights for a given slug — same category first, then the most
+ * Related insights for a given slug - same category first, then the most
  * recent of the rest, excluding the current article.
  */
 export function getRelatedInsights(slug: string, limit = 2): InsightMeta[] {

@@ -8,7 +8,7 @@ import { RevealGroup, RevealItem } from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Our Team",
   description:
-    "Meet the advocates of Shrimal & Associates — a focused litigation team appearing across Indian courts and tribunals.",
+    "Meet the advocates of Shrimal & Associates - a focused litigation team appearing across Indian courts and tribunals.",
 };
 
 // [PLACEHOLDER] Replace names, roles, bios, and photos with real team details.
@@ -46,7 +46,7 @@ export default function TeamPage() {
       <PageHero
         eyebrow="Our Team"
         title="The advocates behind your matter"
-        intro="A focused team that knows your file. You will always know who is handling your matter — and be able to reach them."
+        intro="A focused team that knows your file. You will always know who is handling your matter - and be able to reach them."
       />
 
       <section className="container-px py-20 lg:py-28">
@@ -54,7 +54,7 @@ export default function TeamPage() {
           {team.map((member) => (
             <RevealItem key={member.name}>
               <article className="group h-full overflow-hidden rounded-md border border-navy/8 bg-white shadow-card transition-all duration-500 ease-brand hover:-translate-y-1 hover:shadow-card-hover">
-                {/* Portrait — real photo when set, otherwise an initials monogram */}
+                {/* Portrait - real photo when set, otherwise an initials monogram */}
                 <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-navy">
                   {member.image ? (
                     <Photo
@@ -95,13 +95,6 @@ export default function TeamPage() {
             </RevealItem>
           ))}
         </RevealGroup>
-
-        <p className="mt-12 max-w-2xl text-sm leading-relaxed text-slate-light">
-          Team details and photographs shown above are placeholders. Replace the
-          names, roles, biographies, and portraits in{" "}
-          <code className="rounded bg-navy/5 px-1.5 py-0.5 text-navy">app/team/page.tsx</code>{" "}
-          with your real team information.
-        </p>
       </section>
 
       <CTA heading="Have a matter for our team?" />

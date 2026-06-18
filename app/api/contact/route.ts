@@ -36,7 +36,7 @@ export async function POST(request: Request) {
   const phone = (body.phone ?? "").trim();
   const message = (body.message ?? "").trim();
 
-  // Honeypot — silently accept bots without sending mail
+  // Honeypot - silently accept bots without sending mail
   if ((body.company ?? "").trim() !== "") {
     return NextResponse.json({ ok: true });
   }
@@ -65,7 +65,7 @@ export async function POST(request: Request) {
     process.env;
 
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS || !CONTACT_TO) {
-    // Misconfiguration — log server-side, return a graceful message
+    // Misconfiguration - log server-side, return a graceful message
     console.error("[contact] SMTP environment variables are not configured.");
     return NextResponse.json(
       {
@@ -85,7 +85,7 @@ export async function POST(request: Request) {
 
   const safe = {
     name: escapeHtml(name),
-    email: email ? escapeHtml(email) : "—",
+    email: email ? escapeHtml(email) : "-",
     phone: escapeHtml(phone),
     message: escapeHtml(message).replace(/\n/g, "<br/>"),
   };
@@ -109,7 +109,7 @@ export async function POST(request: Request) {
       </p>
     </div>`;
 
-  const text = `New website enquiry\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email || "—"}\n\nMessage:\n${message}`;
+  const text = `New website enquiry\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email || "-"}\n\nMessage:\n${message}`;
 
   try {
     await transporter.sendMail({

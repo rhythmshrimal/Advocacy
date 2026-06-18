@@ -2,7 +2,7 @@
   "name": "shrimal-associates",
   "version": "1.0.0",
   "private": true,
-  "description": "Shrimal & Associates — Advocates & Legal Consultants",
+  "description": "Shrimal & Associates - Advocates & Legal Consultants",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

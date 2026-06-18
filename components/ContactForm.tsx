@@ -48,7 +48,7 @@ export default function ContactForm() {
       email: String(data.get("email") ?? ""),
       phone: String(data.get("phone") ?? ""),
       message: String(data.get("message") ?? ""),
-      // Honeypot field — should stay empty for real users
+      // Honeypot field - should stay empty for real users
       company: String(data.get("company") ?? ""),
     };
 
@@ -152,7 +152,7 @@ export default function ContactForm() {
             name="phone"
             type="tel"
             autoComplete="tel"
-            placeholder="+91 00000 00000"
+            placeholder="Your phone number"
             aria-invalid={!!errors.phone}
             className={`${fieldBase} ${errors.phone ? "border-red-400" : "border-navy/15"}`}
           />
@@ -171,7 +171,7 @@ export default function ContactForm() {
             name="email"
             type="email"
             autoComplete="email"
-            placeholder="you@example.com"
+            placeholder="Your email address"
             aria-invalid={!!errors.email}
             className={`${fieldBase} ${errors.email ? "border-red-400" : "border-navy/15"}`}
           />
@@ -198,7 +198,7 @@ export default function ContactForm() {
           )}
         </div>
 
-        {/* Honeypot — hidden from real users */}
+        {/* Honeypot - hidden from real users */}
         <div className="hidden" aria-hidden="true">
           <label htmlFor="company">Company</label>
           <input id="company" name="company" type="text" tabIndex={-1} autoComplete="off" />

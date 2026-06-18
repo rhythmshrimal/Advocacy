@@ -1,4 +1,4 @@
-# Shrimal & Associates — Website
+# Shrimal & Associates - Website
 
 A litigation-firm marketing website built with **Next.js (App Router) + TypeScript + Tailwind CSS**, with **Framer Motion** reveals, **GSAP ScrollTrigger** parallax, and a **Nodemailer SMTP** contact form.
 
@@ -43,17 +43,18 @@ Defined in `tailwind.config.ts` and `app/globals.css`:
 | Background | `offwhite`         | `#F8F6F2` |
 | Support    | `slate`            | `#5C6470` |
 
-- **Logo:** `components/Logo.tsx` (scales-of-justice emblem + wordmark). Favicon: `app/icon.svg`.
+- **Logo:** `components/Logo.tsx` pairs the brand emblem (`public/images/emblem.png`, transparent) with the wordmark rendered as **text** (Playfair Display). It supports `layout="row"` (navbar/footer) and `layout="stack"` (emblem above text - used on the home hero). To change the emblem, replace `public/images/emblem.png`.
+- **Favicon:** `app/icon.png` - the emblem composited onto a navy rounded tile (so the cream/gold mark stays visible on any browser tab). Regenerate it from a new emblem with `sharp` if needed.
 - Animations respect `prefers-reduced-motion`.
 
 ## Editing content
 
 **Almost all copy and contact details live in one file:** [`lib/site.ts`](lib/site.ts)
 
-- `site.contact` — **address, Google Maps link, phone, email, hours** (all marked `[PLACEHOLDER]`)
-- `nav` — navigation items
-- `practiceAreas` — the five practice areas (titles, descriptions, bullet points)
-- `matters` / `stats` / `values` — experience, stat counters, firm values
+- `site.contact` - **address, Google Maps link, phone, email, hours** (all marked `[PLACEHOLDER]`)
+- `nav` - navigation items
+- `practiceAreas` - the five practice areas (titles, descriptions, bullet points)
+- `matters` / `stats` / `values` - experience, stat counters, firm values
 
 Page-specific placeholders to update:
 
@@ -71,7 +72,7 @@ into `public/images/` and set the path in `lib/site.ts` (`images` and
 
 Each area has a dedicated, SEO-friendly page at `/practice-areas/<slug>` with an
 overview, "what we handle" list, and FAQs (with `FAQPage` structured data). Add
-or edit areas — including `overview`, `points`, `faqs`, and `image` — in
+or edit areas - including `overview`, `points`, `faqs`, and `image` - in
 `practiceAreas` in [`lib/site.ts`](lib/site.ts). Pages are generated automatically.
 
 ### Insights (MDX)
@@ -105,7 +106,7 @@ to the firm. Add named advocates to that registry.
 
 - **`/sitemap.xml`** and **`/robots.txt`** are generated from `app/sitemap.ts`
   and `app/robots.ts` (include every static page plus practice-area and insight
-  slugs). They derive URLs from `site.url` — set that to the live domain.
+  slugs). They derive URLs from `site.url` - set that to the live domain.
 - **Structured data (JSON-LD):** `LegalService`/`Organization` on the homepage
   ([`components/OrganizationSchema.tsx`](components/OrganizationSchema.tsx)),
   `FAQPage` on each practice-area page, and `Article` on each insight.
@@ -127,7 +128,7 @@ SMTP_FROM=        # "Name <from@domain>"
 CONTACT_TO=       # where enquiries are delivered
 ```
 
-Validation: **Name (required)**, **Phone (required)**, Email (optional), **Message (required)** — enforced on both client and server. A honeypot field blocks basic bots. Until SMTP is configured the form fails gracefully and asks the visitor to call/email.
+Validation: **Name (required)**, **Phone (required)**, Email (optional), **Message (required)** - enforced on both client and server. A honeypot field blocks basic bots. Until SMTP is configured the form fails gracefully and asks the visitor to call/email.
 
 ## Pages
 

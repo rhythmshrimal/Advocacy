@@ -4,9 +4,10 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import Parallax from "./Parallax";
 import Photo from "./Photo";
+import Logo from "./Logo";
 import { site } from "@/lib/site";
 
-/** Decorative courthouse-column backdrop — replace with real chamber/court photography when available. */
+/** Decorative courthouse-column backdrop - replace with real chamber/court photography when available. */
 function ColumnMotif() {
   return (
     <svg
@@ -70,71 +71,62 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_60%_at_70%_30%,rgba(176,141,69,0.10),transparent_70%)]" />
 
       <div className="container-px relative z-10 py-32 lg:py-40">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="max-w-3xl"
-        >
-          <motion.span variants={item} className="eyebrow mb-6">
-            {site.brandLine}
-          </motion.span>
-
-          <motion.h1
-            variants={item}
-            className="font-serif text-4xl font-semibold leading-[1.08] text-offwhite sm:text-5xl lg:text-6xl"
-          >
-            {site.tagline.split(", ")[0]},
-            <br />
-            <span className="text-gold">{site.tagline.split(", ")[1]}.</span>
-          </motion.h1>
-
-          <motion.p
-            variants={item}
-            className="mt-7 max-w-xl text-lg leading-relaxed text-offwhite/75"
-          >
-            {site.name} is a litigation-focused firm representing clients across
-            Indian courts — in criminal, matrimonial &amp; family, service, and
-            PMLA &amp; special-legislation matters.
-          </motion.p>
-
+        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
+          {/* Copy */}
           <motion.div
-            variants={item}
-            className="mt-10 flex flex-col gap-3 sm:flex-row"
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className="lg:col-span-7"
           >
-            <Link href="/contact" className="btn-gold">
-              Request a Consultation
-            </Link>
-            <Link href="/practice-areas" className="btn-ghost-light">
-              Explore Practice Areas
-            </Link>
-          </motion.div>
-        </motion.div>
-      </div>
+            <motion.span variants={item} className="eyebrow mb-6">
+              {site.brandLine}
+            </motion.span>
 
-      {/* scroll hint */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: reduce ? 1 : [0.3, 1, 0.3] }}
-        transition={
-          reduce ? { duration: 0 } : { duration: 2.4, repeat: Infinity }
-        }
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-offwhite/50"
-        aria-hidden="true"
-      >
-        <svg viewBox="0 0 24 40" className="h-9 w-5" fill="none">
-          <rect
-            x="1"
-            y="1"
-            width="22"
-            height="38"
-            rx="11"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          />
-          <circle cx="12" cy="11" r="2.5" fill="currentColor" />
-        </svg>
-      </motion.div>
+            <motion.h1
+              variants={item}
+              className="font-serif text-4xl font-semibold leading-[1.08] text-offwhite sm:text-5xl lg:text-6xl"
+            >
+              {site.tagline.split(", ")[0]},
+              <br />
+              <span className="text-gold">{site.tagline.split(", ")[1]}.</span>
+            </motion.h1>
+
+            <motion.p
+              variants={item}
+              className="mt-7 max-w-xl text-lg leading-relaxed text-offwhite/75"
+            >
+              {site.name} is a litigation-focused firm representing clients across
+              Indian courts - in criminal, matrimonial &amp; family, service, and
+              PMLA &amp; special-legislation matters.
+            </motion.p>
+
+            <motion.div
+              variants={item}
+              className="mt-10 flex flex-col gap-3 sm:flex-row"
+            >
+              <Link href="/contact" className="btn-gold">
+                Request a Consultation
+              </Link>
+              <Link href="/practice-areas" className="btn-ghost-light">
+                Explore Practice Areas
+              </Link>
+            </motion.div>
+          </motion.div>
+
+          {/* Firm emblem + wordmark - right side (desktop) */}
+          <motion.div
+            initial={
+              reduce ? { opacity: 0 } : { opacity: 0, y: 28, scale: 0.96 }
+            }
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.9, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            className="hidden lg:col-span-5 lg:flex lg:justify-center"
+          >
+            <Logo layout="stack" asLink={false} emblemClassName="h-40 w-auto xl:h-48" />
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
 }

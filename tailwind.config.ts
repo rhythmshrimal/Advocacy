@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Brand palette — see lib/site.ts and the brand brief
+        // Brand palette - see lib/site.ts and the brand brief
         navy: {
           DEFAULT: "#0E2A47",
           900: "#0A2038",
