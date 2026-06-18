@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0e2a47;
+  --charcoal: #1a1a1a;
+  --gold: #b08d45;
+  --offwhite: #f8f6f2;
+  --slate: #5c6470;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-offwhite text-charcoal font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif text-navy;
+    text-wrap: balance;
+  }
+
+  /* Honour reduced-motion preferences — disable smooth scroll & transitions */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  ::selection {
+    background: var(--gold);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8 lg:px-10;
+  }
+
+  /* Small gold eyebrow label used above section headings */
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-brand text-gold;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-8 bg-gold;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 ease-brand focus-visible:outline-none;
+  }
+  .btn-gold {
+    @apply btn bg-gold text-white hover:bg-gold-dark hover:shadow-lg;
+  }
+  .btn-navy {
+    @apply btn bg-navy text-offwhite hover:bg-navy-700;
+  }
+  .btn-outline {
+    @apply btn border border-navy/25 text-navy hover:border-gold hover:text-gold;
+  }
+  .btn-ghost-light {
+    @apply btn border border-white/30 text-white hover:border-gold hover:bg-white/5;
+  }
+
+  .link-underline {
+    @apply relative inline-flex items-center gap-1.5 font-medium text-gold transition-colors;
+  }
+  .link-underline::after {
+    content: "";
+    @apply absolute -bottom-0.5 left-0 h-px w-full origin-right scale-x-0 bg-gold transition-transform duration-300 ease-brand;
+  }
+  .link-underline:hover::after {
+    @apply origin-left scale-x-100;
+  }
+}
+
+/* Subtle parallax layer helper */
+.will-parallax {
+  will-change: transform;
+}
