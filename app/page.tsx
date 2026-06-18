@@ -6,11 +6,13 @@ import Stats from "@/components/Stats";
 import CTA from "@/components/CTA";
 import Reveal, { RevealGroup, RevealItem } from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
+import OrganizationSchema from "@/components/OrganizationSchema";
 import { practiceAreas, values, matters, site } from "@/lib/site";
 
 export default function HomePage() {
   return (
     <>
+      <OrganizationSchema />
       <Hero />
 
       {/* ── Values strip ── */}

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import Parallax from "./Parallax";
+import Photo from "./Photo";
 import { site } from "@/lib/site";
 
 /** Decorative courthouse-column backdrop — replace with real chamber/court photography when available. */
@@ -49,12 +50,18 @@ export default function Hero() {
 
   return (
     <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-navy-900">
-      {/* Parallax decorative layer */}
+      {/* Optional background photograph (parallax). Shows the column motif until a photo is set. */}
       <div className="pointer-events-none absolute inset-0">
-        <Parallax speed={120} className="absolute inset-0 opacity-90">
-          <div className="h-[120%] w-full">
-            <ColumnMotif />
-          </div>
+        <Parallax speed={120} className="absolute inset-0">
+          {site.images.hero ? (
+            <div className="relative h-[120%] w-full opacity-40">
+              <Photo src={site.images.hero} alt="" fill priority sizes="100vw" />
+            </div>
+          ) : (
+            <div className="h-[120%] w-full opacity-90">
+              <ColumnMotif />
+            </div>
+          )}
         </Parallax>
       </div>
 

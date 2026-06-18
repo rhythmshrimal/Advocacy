@@ -47,7 +47,7 @@ export default function Footer() {
             {practiceAreas.map((area) => (
               <li key={area.slug}>
                 <Link
-                  href={`/practice-areas#${area.slug}`}
+                  href={`/practice-areas/${area.slug}`}
                   className="text-offwhite/75 transition-colors hover:text-gold"
                 >
                   {area.title}

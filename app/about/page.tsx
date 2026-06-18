@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import CTA from "@/components/CTA";
+import Photo from "@/components/Photo";
 import Reveal, { RevealGroup, RevealItem } from "@/components/Reveal";
 import { values, site } from "@/lib/site";
 
@@ -69,9 +70,18 @@ export default function AboutPage() {
             </Reveal>
           </div>
 
-          {/* Highlight card */}
+          {/* Image + highlight card */}
           <div className="lg:col-span-5">
-            <Reveal from="right" className="sticky top-28">
+            <Reveal from="right" className="space-y-6">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-md shadow-card">
+                <Photo
+                  src={site.images.about}
+                  alt="Shrimal & Associates chambers"
+                  label="Chambers / firm photo"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+              </div>
               <div className="rounded-md border border-navy/8 bg-white p-8 shadow-card">
                 <p className="font-serif text-2xl italic leading-snug text-navy">
                   “{site.tagline}.”

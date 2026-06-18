@@ -56,8 +56,8 @@ export default function PracticeAreasPage() {
                     <p className="mt-5 text-base leading-relaxed text-slate sm:text-lg">
                       {area.description}
                     </p>
-                    <Link href="/contact" className="link-underline mt-7">
-                      Discuss a {area.title.toLowerCase()} matter
+                    <Link href={`/practice-areas/${area.slug}`} className="link-underline mt-7">
+                      Read more about {area.title}
                       <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
                         <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>

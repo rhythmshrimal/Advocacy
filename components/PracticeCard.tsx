@@ -41,7 +41,7 @@ function AreaIcon({ slug }: { slug: string }) {
 export default function PracticeCard({ area, index }: PracticeCardProps) {
   return (
     <Link
-      href={`/practice-areas#${area.slug}`}
+      href={`/practice-areas/${area.slug}`}
       className="group relative flex h-full flex-col rounded-md border border-navy/8 bg-white p-7 shadow-card transition-all duration-500 ease-brand hover:-translate-y-1 hover:border-gold/40 hover:shadow-card-hover sm:p-8"
     >
       {/* number + icon row */}

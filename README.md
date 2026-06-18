@@ -58,7 +58,59 @@ Defined in `tailwind.config.ts` and `app/globals.css`:
 Page-specific placeholders to update:
 
 - **Team profiles & photos:** `app/team/page.tsx`
-- **Insights articles:** `app/insights/page.tsx`
+
+### Photographs
+
+All images render through `components/Photo.tsx` (`next/image`), showing a
+branded placeholder until a real photo is supplied. To add photos: drop files
+into `public/images/` and set the path in `lib/site.ts` (`images` and
+`practiceAreas[].image`) or `app/team/page.tsx`. See
+[`public/images/README.md`](public/images/README.md) for slots and dimensions.
+
+### Practice-area pages
+
+Each area has a dedicated, SEO-friendly page at `/practice-areas/<slug>` with an
+overview, "what we handle" list, and FAQs (with `FAQPage` structured data). Add
+or edit areas — including `overview`, `points`, `faqs`, and `image` — in
+`practiceAreas` in [`lib/site.ts`](lib/site.ts). Pages are generated automatically.
+
+### Insights (MDX)
+
+Articles are Markdown/MDX files in `content/insights/`. To publish, add a
+`<slug>.mdx` file with frontmatter:
+
+```mdx
+---
+title: "Your headline"
+excerpt: "One-sentence summary for the card and meta description."
+category: "Criminal Law"
+date: "2026-06-01"        # ISO date, used for sorting
+author: "Shrimal & Associates"
+draft: false               # set true to hide
+---
+
+Your article body in Markdown / MDX…
+```
+
+Reading time, the article page (`/insights/<slug>`), `Article` structured data,
+a **related-articles** section, and the listing card are all generated
+automatically.
+
+**Author bios:** the `author` value is matched against the author registry in
+[`lib/insights.ts`](lib/insights.ts) (`authors`), which supplies the bio, role,
+initials, and optional photo shown in the byline card. Unknown authors fall back
+to the firm. Add named advocates to that registry.
+
+## SEO
+
+- **`/sitemap.xml`** and **`/robots.txt`** are generated from `app/sitemap.ts`
+  and `app/robots.ts` (include every static page plus practice-area and insight
+  slugs). They derive URLs from `site.url` — set that to the live domain.
+- **Structured data (JSON-LD):** `LegalService`/`Organization` on the homepage
+  ([`components/OrganizationSchema.tsx`](components/OrganizationSchema.tsx)),
+  `FAQPage` on each practice-area page, and `Article` on each insight.
+- Per-page titles, descriptions, and Open Graph tags are set via Next.js
+  `metadata` exports.
 
 ## Contact form / SMTP
 
@@ -79,7 +131,9 @@ Validation: **Name (required)**, **Phone (required)**, Email (optional), **Messa
 
 ## Pages
 
-`/` Home · `/about` · `/practice-areas` (anchored sections) · `/team` · `/experience` · `/insights` · `/contact`
+- `/` Home · `/about` · `/team` · `/experience` · `/contact`
+- `/practice-areas` overview → `/practice-areas/<slug>` per-area pages (5, SSG)
+- `/insights` listing → `/insights/<slug>` MDX articles (SSG)
 
 ## Deployment
 
