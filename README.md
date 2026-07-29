@@ -6,6 +6,15 @@ A litigation-firm marketing website built with **Next.js (App Router) + TypeScri
 
 ---
 
+> **The Insights articles need legal review before they are published.** The ten
+> articles in `content/insights/` are drafted from general legal principles and have
+> **not been verified by the firm**. Before going live, an advocate must check every
+> statutory reference, timeline, and procedural statement, and confirm the copy
+> complies with **Bar Council of India** rules on advertising and solicitation. To
+> hold an article back, set `draft: true` in its frontmatter.
+
+---
+
 ## Tech stack
 
 | Concern        | Choice                                  |
@@ -54,7 +63,7 @@ Defined in `tailwind.config.ts` and `app/globals.css`:
 - `site.contact` - **address, Google Maps link, phone, email, hours** (all marked `[PLACEHOLDER]`)
 - `nav` - navigation items
 - `practiceAreas` - the five practice areas (titles, descriptions, bullet points)
-- `matters` / `stats` / `values` - experience, stat counters, firm values
+- `stats` / `values` - stat counters, firm values
 
 Page-specific placeholders to update:
 
@@ -132,7 +141,7 @@ Validation: **Name (required)**, **Phone (required)**, Email (optional), **Messa
 
 ## Pages
 
-- `/` Home · `/about` · `/team` · `/experience` · `/contact`
+- `/` Home · `/about` · `/team` · `/contact`
 - `/practice-areas` overview → `/practice-areas/<slug>` per-area pages (5, SSG)
 - `/insights` listing → `/insights/<slug>` MDX articles (SSG)
 

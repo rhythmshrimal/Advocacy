@@ -91,7 +91,7 @@ export const practiceAreas: PracticeArea[] = [
     title: "Criminal Law",
     short: "Representation in bail, trial, and criminal appellate proceedings.",
     description:
-      "Strategic, discreet representation at every stage of the criminal process - from arrest and bail to trial, revision, and appeal - before Magistrate and Sessions Courts, High Courts, and the Supreme Court.",
+      "Representation at every stage of a criminal matter - bail, trial, quashing, revision, and appeal - before Magistrate and Sessions Courts, High Courts, and the Supreme Court.",
     points: [
       "Anticipatory & regular bail applications",
       "Trial defence and cross-examination strategy",
@@ -100,22 +100,22 @@ export const practiceAreas: PracticeArea[] = [
     ],
     image: "", // 1200×900 - courtroom / chambers
     overview: [
-      "A criminal allegation - whether an FIR, a summons, or an arrest - is one of the most disorienting experiences a person can face. Our role is to bring order to it: to explain exactly what you are up against, protect your rights from the first hour, and build a defence grounded in the record rather than in reaction.",
-      "We act at every stage of the process. That means anticipatory and regular bail, representation through investigation and trial, careful cross-examination, and, where required, revision and appeal before the High Court and Supreme Court. We also pursue quashing of proceedings under Section 482 CrPC where the case does not survive legal scrutiny at the threshold.",
-      "Discretion matters in criminal matters, and we treat it as a professional obligation. Your matter is handled by counsel who has read the file in full and is prepared to argue it.",
+      "We appear for individuals and companies in criminal matters from the FIR stage onwards. The first step is usually a straight assessment: what the allegation is, what the record actually shows, and what needs to be done immediately to protect your position.",
+      "The work covers anticipatory and regular bail, representation through investigation and trial, cross-examination, and quashing petitions under Section 482 CrPC. Where a matter has to be taken further, we file and argue revisions, appeals, and criminal writs before the High Court and the Supreme Court.",
+      "Your matter is handled by counsel who has read the file. We tell you where the case is weak as well as where it is strong, and we treat confidentiality as a professional obligation.",
     ],
     faqs: [
       {
         q: "What is the difference between anticipatory and regular bail?",
-        a: "Anticipatory bail is sought before arrest, where there is an apprehension of being taken into custody. Regular bail is sought after arrest. We assess which applies to your situation and the forum best suited to it.",
+        a: "Anticipatory bail is applied for before arrest, where there is a reasonable apprehension of being taken into custody. Regular bail is applied for after arrest. We advise which one applies to your case and which court to approach first.",
       },
       {
         q: "Can an FIR be quashed?",
-        a: "In appropriate cases, yes - the High Court can quash an FIR or criminal proceedings under Section 482 CrPC, for example where the allegations do not disclose an offence or where the dispute is essentially civil. Whether it applies depends on the specific facts.",
+        a: "In appropriate cases, yes. The High Court can quash an FIR or criminal proceedings under Section 482 CrPC - for example, where the allegations do not disclose an offence, or where the dispute is essentially civil. Whether it applies depends on the facts and the material on record.",
       },
       {
         q: "How quickly should I act after an FIR or summons?",
-        a: "As early as possible. Steps taken in the first days - protecting against arrest, preserving evidence, framing the response - often shape the entire matter. Call us before responding to any notice.",
+        a: "As early as possible. What is done in the first few days - protecting against arrest, preserving documents, framing the response - usually decides how the rest of the matter goes. Speak to us before replying to any notice.",
       },
     ],
   },
@@ -124,7 +124,7 @@ export const practiceAreas: PracticeArea[] = [
     title: "Matrimonial & Family Law",
     short: "Handling divorce, maintenance, custody, and related family law matters.",
     description:
-      "Compassionate yet firm representation in matrimonial and family matters, with a focus on protecting your interests and your children's welfare while pursuing timely, dignified resolutions.",
+      "Representation in divorce, maintenance, custody, and domestic-violence matters before Family Courts and High Courts, with settlement pursued wherever it is workable.",
     points: [
       "Divorce - contested & mutual consent",
       "Maintenance, alimony & child custody",
@@ -133,22 +133,22 @@ export const practiceAreas: PracticeArea[] = [
     ],
     image: "", // 1200×900 - calm, professional consultation setting
     overview: [
-      "Family disputes are rarely only legal - they are personal, financial, and often involve children. We approach them with the sensitivity they demand and the firmness they require, helping you make clear decisions at a time when clarity is hardest to find.",
-      "Our work covers contested and mutual-consent divorce, maintenance and alimony, child custody and guardianship, and protection under the domestic-violence framework. Wherever a dignified, time-bound settlement is achievable, we pursue it; where litigation is necessary to protect you, we conduct it with full preparation.",
-      "Throughout, our focus is on your long-term interests and, where children are involved, their welfare - not on prolonging conflict.",
+      "We act in matrimonial and family disputes, including contested and mutual-consent divorce, maintenance and alimony, child custody and guardianship, and proceedings under the domestic-violence law.",
+      "A large part of the work is deciding what is worth contesting and what is better settled. Where terms can be agreed, we negotiate the settlement and document it properly so it holds. Where they cannot, we conduct the litigation - interim applications included - with the record prepared in full.",
+      "Where children are involved, the court decides on the welfare of the child, and we build the case on that footing. We also give you a realistic view of timelines at the outset, because family matters usually take longer than clients expect.",
     ],
     faqs: [
       {
         q: "How long does a mutual-consent divorce take?",
-        a: "It involves two motions with a statutory cooling-off period in between, which courts can waive in appropriate cases. Timelines vary by court and facts; we will give you a realistic estimate for your situation.",
+        a: "The process involves two motions, with a statutory cooling-off period in between that courts can waive in appropriate cases. Actual timelines depend on the court and the facts, and we will give you an estimate for your matter.",
       },
       {
         q: "How is child custody decided?",
-        a: "The welfare of the child is the paramount consideration. Courts weigh factors such as the child's age, needs, and existing arrangements. We help present your case in a way that centres the child's best interests.",
+        a: "The welfare of the child is the paramount consideration. Courts look at the child's age and needs, the existing arrangement, and each parent's ability to provide care. Financial strength alone is not the test.",
       },
       {
         q: "Can maintenance be claimed during proceedings?",
-        a: "Yes - interim maintenance can be sought while the main matter is pending, in addition to final maintenance or alimony. We advise on what is realistic given the circumstances.",
+        a: "Yes. Interim maintenance can be sought while the main matter is pending, separately from final maintenance or alimony. We advise on what is realistic on the facts.",
       },
     ],
   },
