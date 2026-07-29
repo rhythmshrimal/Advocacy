@@ -96,9 +96,11 @@ export default function Hero() {
               variants={item}
               className="mt-7 max-w-xl text-lg leading-relaxed text-offwhite/75"
             >
-              {site.name} is a litigation-focused firm representing clients across
-              Indian courts - in criminal, matrimonial &amp; family, service, and
-              PMLA &amp; special-legislation matters.
+              {site.name} is a litigation-focused law firm representing 
+              individuals, businesses, and institutions across India in 
+              Criminal, Civil, Matrimonial &amp; Family, Service, Commercial, 
+              Corporate, PMLA, and other specialized legal matters before 
+              courts, tribunals, and regulatory authorities.
             </motion.p>
 
             <motion.div

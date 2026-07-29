@@ -102,6 +102,12 @@ export default function ContactPage() {
                   >
                     {contact.phoneDisplay}
                   </a>
+                  <a
+                    href={`tel:${contact.phone2Href}`}
+                    className="block transition-colors hover:text-gold"
+                  >
+                    {contact.phone2Display}
+                  </a>
                 </DetailRow>
 
                 <DetailRow

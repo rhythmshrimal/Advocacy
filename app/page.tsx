@@ -113,7 +113,7 @@ export default function HomePage() {
             <span className="eyebrow mb-6 justify-center">{site.brandLine}</span>
             <p className="font-serif text-2xl font-medium leading-snug text-offwhite sm:text-3xl lg:text-[2.4rem] lg:leading-[1.25]">
               “We measure our work not by the cases we take, but by the trust our
-              clients place in us - and the outcomes we secure on their behalf.”
+              clients place in us and the outcomes we secure on their behalf.”
             </p>
           </Reveal>
         </div>

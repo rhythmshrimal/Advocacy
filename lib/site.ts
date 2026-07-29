@@ -19,7 +19,7 @@ export const site = {
 
   url: "https://www.shrimalassociates.in",
 
-  // ── Contact placeholders - replace with real details ──
+  // ── Contact placeholders ──
   contact: {
     // [PLACEHOLDER] Office address
     addressLines: [
@@ -36,6 +36,8 @@ export const site = {
     // [PLACEHOLDER] Phone
     phoneDisplay: "+91 99833 21035",
     phoneHref: "+919983321035",
+    phone2Display: "+91 89495 69357",
+    phone2Href: "+918949569357",
     // [PLACEHOLDER] Email
     email: "contact@shrimalassociates.in",
     hours: "Mon – Sun · 10:00 AM – 9:00 PM",
@@ -267,7 +269,7 @@ export const matters: Matter[] = [
   {
     area: "Matrimonial & Family",
     summary:
-      "Extensive matrimonial litigation experience before Family Courts and at Patiala House, covering contested divorce, custody, and maintenance.",
+      "Extensive matrimonial litigation experience before Family Courts, covering contested divorce, custody, and maintenance.",
   },
   {
     area: "Criminal Defence",
