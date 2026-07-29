@@ -8,10 +8,10 @@ const ICONS: Record<string, string> = {
     "M12 20s-6.5-4.3-8.5-8.2C2 8.7 3.6 6 6.5 6c1.8 0 3.1 1 3.5 2 1-2 2.2-2 3.5-2C16.4 6 18 8.7 16.5 11.8 14.5 15.7 12 20 12 20Z",
   "service-law":
     "M4 20h16M6 20V9l6-4 6 4v11M9 20v-5h6v5",
+  "civil-commercial-law":
+    "M12 3v18M5 8l7-5 7 5M5 8l-2 6h4l-2-6Zm14 0l-2 6h4l-2-6Z",
   "pmla-special-legislation":
     "M4 21h16M6 21V9m4 12V9m4 12V9m4 12V9M3 9l9-6 9 6",
-  "civil-litigation":
-    "M12 3v18M5 8l7-5 7 5M5 8l-2 6h4l-2-6Zm14 0l-2 6h4l-2-6Z",
 };
 
 type PracticeCardProps = {
@@ -28,7 +28,7 @@ function AreaIcon({ slug }: { slug: string }) {
       aria-hidden="true"
     >
       <path
-        d={ICONS[slug] ?? ICONS["civil-litigation"]}
+        d={ICONS[slug] ?? ICONS["civil-commercial-law"]}
         stroke="currentColor"
         strokeWidth="1.4"
         strokeLinecap="round"

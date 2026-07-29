@@ -8,7 +8,7 @@ import { practiceAreas } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Practice Areas",
   description:
-    "Criminal law, matrimonial & family law, service law, PMLA & special legislation, and civil litigation - handled end to end across Indian courts.",
+    "Criminal law, matrimonial & family law, service law, civil & commercial law, and PMLA & special legislation - handled end to end across Indian courts.",
 };
 
 export default function PracticeAreasPage() {

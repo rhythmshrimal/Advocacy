@@ -7,7 +7,7 @@ import CTA from "@/components/CTA";
 import Reveal, { RevealGroup, RevealItem } from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 import OrganizationSchema from "@/components/OrganizationSchema";
-import { practiceAreas, values, matters, site } from "@/lib/site";
+import { practiceAreas, values, site } from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -120,42 +120,9 @@ export default function HomePage() {
       </section>
 
       {/* ── Stats ── */}
-      <section className="bg-navy-900 pb-20 pt-0 lg:pb-28">
+      <section className="bg-navy-900 pb-10 pt-0 lg:pb-14">
         <div className="container-px -translate-y-10">
           <Stats />
-        </div>
-        {/* Experience teaser */}
-        <div className="container-px">
-          <div className="grid items-center gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-7">
-              <SectionHeading
-                tone="light"
-                eyebrow="Experience"
-                title="Tested across forums - trial to apex court"
-                intro="Representative, confidentiality-safe examples of the matters we handle."
-              />
-            </div>
-            <div className="lg:col-span-5">
-              <Reveal>
-                <Link href="/experience" className="btn-gold">
-                  View notable matters
-                </Link>
-              </Reveal>
-            </div>
-          </div>
-          <RevealGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {matters.slice(0, 3).map((m) => (
-              <RevealItem
-                key={m.area}
-                className="rounded-md border border-white/10 bg-white/[0.03] p-7"
-              >
-                <h3 className="font-serif text-lg text-gold-light">{m.area}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-offwhite/70">
-                  {m.summary}
-                </p>
-              </RevealItem>
-            ))}
-          </RevealGroup>
         </div>
       </section>
 

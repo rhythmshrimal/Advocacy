@@ -9,7 +9,7 @@ import { values, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About the Firm",
   description:
-    "Shrimal & Associates is a litigation-focused law firm bringing clarity, strategy, and steady advocacy to criminal, matrimonial, service, and PMLA matters across Indian courts.",
+    "Shrimal & Associates is a litigation-focused law firm bringing clarity, strategy, and steady advocacy to criminal, matrimonial, service, civil & commercial, and PMLA matters across Indian courts.",
 };
 
 const approach = [
@@ -52,9 +52,9 @@ export default function AboutPage() {
                 Shrimal &amp; Associates was founded on a simple conviction: that
                 rigorous preparation, candid advice, and disciplined advocacy are
                 what move difficult matters forward. Our practice spans criminal
-                defence, matrimonial and family disputes, service law, and
-                proceedings under the Prevention of Money Laundering Act and allied
-                special legislation.
+                law, matrimonial and family disputes, service law, civil and
+                commercial disputes, and proceedings under the Prevention of Money
+                Laundering Act and allied special legislation.
               </p>
               <p>
                 We appear before trial courts, tribunals, High Courts, and the
@@ -93,7 +93,7 @@ export default function AboutPage() {
                       Focus
                     </dt>
                     <dd className="mt-1 text-slate">
-                      Litigation across criminal, family, service &amp; economic-offence law
+                      Litigation across criminal, family, service, civil &amp; economic-offence law
                     </dd>
                   </div>
                   <div>

@@ -8,7 +8,7 @@ import { getAllInsights } from "@/lib/insights";
 export const metadata: Metadata = {
   title: "Insights",
   description:
-    "Commentary and notes on legal developments from Shrimal & Associates - across criminal, matrimonial, service, and economic-offence law.",
+    "Commentary and notes on legal developments from Shrimal & Associates - across criminal, matrimonial & family, service, civil & commercial, and PMLA law.",
 };
 
 export default function InsightsPage() {
@@ -25,11 +25,7 @@ export default function InsightsPage() {
       <section className="container-px py-20 lg:py-28">
         {posts.length === 0 ? (
           <p className="text-slate">
-            No articles have been published yet. Add an{" "}
-            <code className="rounded bg-navy/5 px-1.5 py-0.5 text-navy">.mdx</code>{" "}
-            file to{" "}
-            <code className="rounded bg-navy/5 px-1.5 py-0.5 text-navy">content/insights/</code>{" "}
-            to publish.
+            No articles have been published yet. Please check back shortly.
           </p>
         ) : (
           <RevealGroup className="grid gap-8 md:grid-cols-2">
@@ -65,12 +61,6 @@ export default function InsightsPage() {
           </RevealGroup>
         )}
 
-        <p className="mt-12 max-w-2xl text-sm leading-relaxed text-slate-light">
-          Add a new <code className="rounded bg-navy/5 px-1.5 py-0.5 text-navy">.mdx</code>{" "}
-          file with the required frontmatter to publish; set{" "}
-          <code className="rounded bg-navy/5 px-1.5 py-0.5 text-navy">draft: true</code>{" "}
-          to hide one.
-        </p>
       </section>
 
       <CTA heading="Have a question we haven't covered?" />

@@ -15,7 +15,7 @@ export const site = {
   brandLine: "Advocacy. Integrity. Results.",
 
   description:
-    "Shrimal & Associates is a litigation-focused law firm representing clients across Indian courts in criminal, matrimonial & family, service, and PMLA & special-legislation matters.",
+    "Shrimal & Associates is a litigation-focused law firm representing clients across Indian courts in criminal, matrimonial & family, service, civil & commercial, and PMLA & special-legislation matters.",
 
   url: "https://www.shrimalassociates.in",
 
@@ -66,7 +66,6 @@ export const nav: NavItem[] = [
   { label: "About", href: "/about" },
   { label: "Practice Areas", href: "/practice-areas" },
   { label: "Team", href: "/team" },
-  { label: "Experience", href: "/experience" },
   { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
 ];
@@ -90,7 +89,7 @@ export const practiceAreas: PracticeArea[] = [
   {
     slug: "criminal-law",
     title: "Criminal Law",
-    short: "Bail, trial & appellate defence across criminal courts.",
+    short: "Representation in bail, trial, and criminal appellate proceedings.",
     description:
       "Strategic, discreet representation at every stage of the criminal process - from arrest and bail to trial, revision, and appeal - before Magistrate and Sessions Courts, High Courts, and the Supreme Court.",
     points: [
@@ -123,7 +122,7 @@ export const practiceAreas: PracticeArea[] = [
   {
     slug: "matrimonial-family-law",
     title: "Matrimonial & Family Law",
-    short: "Sensitive, decisive counsel for family disputes.",
+    short: "Handling divorce, maintenance, custody, and related family law matters.",
     description:
       "Compassionate yet firm representation in matrimonial and family matters, with a focus on protecting your interests and your children's welfare while pursuing timely, dignified resolutions.",
     points: [
@@ -187,6 +186,39 @@ export const practiceAreas: PracticeArea[] = [
     ],
   },
   {
+    slug: "civil-commercial-law",
+    title: "Civil & Commercial Law",
+    short: "Resolving property, commercial & contractual disputes.",
+    description:
+      "End-to-end conduct of civil and commercial disputes - from drafting and interim relief to trial and execution - across civil courts, High Courts, and specialised forums.",
+    points: [
+      "Property, partition & title disputes",
+      "Contractual & commercial litigation",
+      "Recovery, injunctions & interim relief",
+      "Arbitration & enforcement",
+    ],
+    image: "", // 1200×900 - civil court / commercial
+    overview: [
+      "Civil disputes - over property, contracts, money, or business relationships - can drag on for years if they are not handled with strategy from the outset. We conduct them end to end, with an eye on the outcome and the cost of getting there.",
+      "Our work spans property, partition, and title disputes, contractual and commercial litigation, recovery actions, and applications for injunctions and interim relief. We also handle arbitration and the enforcement and execution of awards and decrees, so that a result on paper becomes a result in fact.",
+      "We advise frankly on whether to fight, settle, or structure around a dispute - because the right answer is not always litigation.",
+    ],
+    faqs: [
+      {
+        q: "Can I get urgent interim relief while my case is pending?",
+        a: "Yes - courts can grant injunctions and other interim relief to preserve the status quo or prevent harm while the main matter is decided. We move quickly where urgency demands it.",
+      },
+      {
+        q: "Is arbitration faster than going to court?",
+        a: "It often can be, and it offers privacy and flexibility, but it depends on the agreement and the dispute. We advise on whether arbitration suits your matter and represent you through it.",
+      },
+      {
+        q: "I have a decree but the other side won't pay - what now?",
+        a: "A decree is enforced through execution proceedings. We pursue execution and the available mechanisms to recover what you are owed.",
+      },
+    ],
+  },
+  {
     slug: "pmla-special-legislation",
     title: "PMLA & Special Legislation",
     short: "Defence in economic-offence & regulatory matters.",
@@ -218,78 +250,6 @@ export const practiceAreas: PracticeArea[] = [
         a: "Yes - provisional attachment is subject to adjudication and can be challenged before the Adjudicating Authority and the Appellate Tribunal, with further recourse to the courts.",
       },
     ],
-  },
-  {
-    slug: "civil-litigation",
-    title: "Litigation & Civil Disputes",
-    short: "Resolving property, commercial & contractual disputes.",
-    description:
-      "End-to-end conduct of civil and commercial disputes - from drafting and interim relief to trial and execution - across civil courts, High Courts, and specialised forums.",
-    points: [
-      "Property, partition & title disputes",
-      "Contractual & commercial litigation",
-      "Recovery, injunctions & interim relief",
-      "Arbitration & enforcement",
-    ],
-    image: "", // 1200×900 - civil court / commercial
-    overview: [
-      "Civil disputes - over property, contracts, money, or business relationships - can drag on for years if they are not handled with strategy from the outset. We conduct them end to end, with an eye on the outcome and the cost of getting there.",
-      "Our work spans property, partition, and title disputes, contractual and commercial litigation, recovery actions, and applications for injunctions and interim relief. We also handle arbitration and the enforcement and execution of awards and decrees, so that a result on paper becomes a result in fact.",
-      "We advise frankly on whether to fight, settle, or structure around a dispute - because the right answer is not always litigation.",
-    ],
-    faqs: [
-      {
-        q: "Can I get urgent interim relief while my case is pending?",
-        a: "Yes - courts can grant injunctions and other interim relief to preserve the status quo or prevent harm while the main matter is decided. We move quickly where urgency demands it.",
-      },
-      {
-        q: "Is arbitration faster than going to court?",
-        a: "It often can be, and it offers privacy and flexibility, but it depends on the agreement and the dispute. We advise on whether arbitration suits your matter and represent you through it.",
-      },
-      {
-        q: "I have a decree but the other side won't pay - what now?",
-        a: "A decree is enforced through execution proceedings. We pursue execution and the available mechanisms to recover what you are owed.",
-      },
-    ],
-  },
-];
-
-export type Matter = {
-  area: string;
-  summary: string;
-};
-
-// Generalised, confidentiality-safe representative experience.
-export const matters: Matter[] = [
-  {
-    area: "PMLA & Economic Offences",
-    summary:
-      "Represented clients before Special Courts and the Appellate Tribunal in proceedings under the Prevention of Money Laundering Act, including attachment and bail matters.",
-  },
-  {
-    area: "Matrimonial & Family",
-    summary:
-      "Extensive matrimonial litigation experience before Family Courts, covering contested divorce, custody, and maintenance.",
-  },
-  {
-    area: "Criminal Defence",
-    summary:
-      "Secured bail and conducted trial defence across Magistrate and Sessions Courts, with quashing and appellate work before the High Court.",
-  },
-  {
-    area: "Service Law",
-    summary:
-      "Advised and represented government servants and officers in disciplinary, promotion, and pension disputes before Tribunals and the High Court.",
-  },
-  {
-    area: "Civil & Commercial",
-    summary:
-      "Conducted property, contractual, and recovery disputes through interim relief, trial, and execution stages.",
-  },
-  {
-    area: "Writ & Constitutional",
-    summary:
-      "Filed and argued writ petitions raising questions of procedural fairness and statutory interpretation before constitutional courts.",
   },
 ];
 
