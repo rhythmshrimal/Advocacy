@@ -67,7 +67,7 @@ export default function Hero() {
       </div>
 
       {/* gradient overlays for depth + legibility */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-900/85 to-navy-800" />
+      <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-navy-900 via-navy-900/85 to-navy-800" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_60%_at_70%_30%,rgba(176,141,69,0.10),transparent_70%)]" />
 
       <div className="container-px relative z-10 py-32 lg:py-40">
@@ -99,7 +99,7 @@ export default function Hero() {
               {site.name} is a litigation-focused law firm representing 
               individuals, businesses, and institutions across India in 
               Criminal, Civil, Matrimonial &amp; Family, Service, Commercial, 
-              Corporate, PMLA, and other specialized legal matters before 
+              Corporate, Taxation, Arbitration, PMLA, and other specialized legal matters before
               courts, tribunals, and regulatory authorities.
             </motion.p>
 

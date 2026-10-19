@@ -19,8 +19,8 @@ A litigation-firm marketing website built with **Next.js (App Router) + TypeScri
 
 | Concern        | Choice                                  |
 | -------------- | --------------------------------------- |
-| Framework      | Next.js 15 (App Router), React 19, TS   |
-| Styling        | Tailwind CSS 3 (custom brand theme)     |
+| Framework      | Next.js 16 (App Router), React 19, TS   |
+| Styling        | Tailwind CSS 4 (custom brand theme)     |
 | Component anim | Framer Motion (scroll reveals, menu)    |
 | Scroll/parallax| GSAP + ScrollTrigger (`@gsap/react`)    |
 | Contact form   | API route + Nodemailer (SMTP)           |
@@ -30,7 +30,7 @@ A litigation-firm marketing website built with **Next.js (App Router) + TypeScri
 
 ```bash
 npm install
-cp .env.example .env.local   # then fill in real SMTP values
+cp .env.example .env.local   # optional: configure SMTP when ready to enable email
 npm run dev                  # http://localhost:3000
 ```
 
@@ -60,9 +60,9 @@ Defined in `tailwind.config.ts` and `app/globals.css`:
 
 **Almost all copy and contact details live in one file:** [`lib/site.ts`](lib/site.ts)
 
-- `site.contact` - **address, Google Maps link, phone, email, hours** (all marked `[PLACEHOLDER]`)
+- `site.contact` - **Jaipur address, phone, email, and hours**; `offices` contains all four office addresses, Maps links, and phone numbers
 - `nav` - navigation items
-- `practiceAreas` - the five practice areas (titles, descriptions, bullet points)
+- `practiceAreas` - the seven practice areas (titles, descriptions, bullet points)
 - `stats` / `values` - stat counters, firm values
 
 Page-specific placeholders to update:
@@ -142,13 +142,16 @@ Validation: **Name (required)**, **Phone (required)**, Email (optional), **Messa
 ## Pages
 
 - `/` Home · `/about` · `/team` · `/contact`
-- `/practice-areas` overview → `/practice-areas/<slug>` per-area pages (5, SSG)
+- `/practice-areas` overview → `/practice-areas/<slug>` per-area pages (7, SSG)
 - `/insights` listing → `/insights/<slug>` MDX articles (SSG)
 
 ## Deployment
 
 Deploy to **Vercel** (zero-config) or any Node host. Set the SMTP environment
 variables in your host's dashboard. `next start` serves the production build.
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for the release checks, Vercel settings,
+SMTP configuration, domain setup, and outstanding launch items.
 
 ## Compliance note
 

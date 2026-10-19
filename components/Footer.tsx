@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Logo from "./Logo";
+import OfficeMap from "./OfficeMap";
 import { nav, practiceAreas, site } from "@/lib/site";
 
 export default function Footer() {
@@ -64,24 +65,6 @@ export default function Footer() {
           </h4>
           <address className="mt-5 space-y-4 text-sm not-italic">
             <a
-              href={site.contact.mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-offwhite/75 transition-colors hover:text-gold"
-            >
-              {site.contact.addressLines.map((line) => (
-                <span key={line} className="block">
-                  {line}
-                </span>
-              ))}
-            </a>
-            <a
-              href={`tel:${site.contact.phoneHref}`}
-              className="block text-offwhite/75 transition-colors hover:text-gold"
-            >
-              {site.contact.phoneDisplay}
-            </a>
-            <a
               href={`mailto:${site.contact.email}`}
               className="block text-offwhite/75 transition-colors hover:text-gold"
             >
@@ -91,6 +74,8 @@ export default function Footer() {
           </address>
         </div>
       </div>
+
+      <OfficeMap />
 
       <div className="border-t border-white/10">
         <div className="container-px flex flex-col items-center justify-between gap-3 py-6 text-xs text-offwhite/50 sm:flex-row">

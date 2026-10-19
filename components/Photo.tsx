@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 type PhotoProps = {
-  /** Path under /public (e.g. "/images/hero.jpg"). When empty, a branded placeholder is shown. */
+  /** Path under /public (e.g. "/images/hero.webp"). When empty, a branded placeholder is shown. */
   src?: string;
   alt: string;
   /** Short label shown on the placeholder, e.g. "Chambers photo" */
@@ -78,7 +78,7 @@ export default function Photo({
         fill
         priority={priority}
         sizes={sizes ?? "100vw"}
-        className={`object-${fit} ${className}`}
+        className={`${fit === "contain" ? "object-contain" : "object-cover"} ${className}`}
       />
     );
   }

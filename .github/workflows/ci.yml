@@ -1,0 +1,36 @@
+name: Verify review release
+
+on:
+  pull_request:
+  push:
+    branches: [main, Fix6-final-draft]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm audit --audit-level=moderate
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - name: Verify production routes and contact validation
+        run: |
+          npm run start -- --hostname 127.0.0.1 --port 3001 > /tmp/advocacy-server.log 2>&1 &
+          review_server_pid=$!
+          trap 'kill "$review_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:3001/sitemap.xml > /dev/null; then break; fi
+            sleep 1
+          done
+          VERIFY_UNCONFIGURED_SMTP=1 npm run verify:production

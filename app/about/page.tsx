@@ -9,7 +9,7 @@ import { values, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About the Firm",
   description:
-    "Shrimal & Associates is a litigation-focused law firm bringing clarity, strategy, and steady advocacy to criminal, matrimonial, service, civil & commercial, and PMLA matters across Indian courts.",
+    "Shrimal & Associates is a litigation-focused law firm bringing clarity, strategy, and steady advocacy to criminal, matrimonial, service, civil & commercial, taxation, arbitration, and PMLA matters across Indian courts.",
 };
 
 const approach = [
@@ -73,12 +73,14 @@ export default function AboutPage() {
           {/* Image + highlight card */}
           <div className="lg:col-span-5">
             <Reveal from="right" className="space-y-6">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-md shadow-card">
+              <div className="relative overflow-hidden rounded-md shadow-card">
                 <Photo
                   src={site.images.about}
                   alt="Shrimal & Associates chambers"
                   label="Chambers / firm photo"
-                  fill
+                  width={1132}
+                  height={752}
+                  className="h-auto w-full"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               </div>
@@ -93,7 +95,7 @@ export default function AboutPage() {
                       Focus
                     </dt>
                     <dd className="mt-1 text-slate">
-                      Litigation across criminal, family, service, civil &amp; economic-offence law
+                      Litigation across criminal, family, service, civil, taxation, arbitration &amp; economic-offence law
                     </dd>
                   </div>
                   <div>

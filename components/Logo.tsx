@@ -18,7 +18,7 @@ type LogoProps = {
 function Emblem({ className }: { className: string }) {
   return (
     <Image
-      src="/images/emblem.png"
+      src="/images/emblem.webp"
       alt={`${site.name} emblem`}
       width={1024}
       height={1024}

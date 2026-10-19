@@ -4,8 +4,7 @@ Drop real, well-lit, brand-consistent photographs here, then reference them in
 the code. Until a path is set, the site shows a tasteful branded placeholder.
 
 > Prefer **real photos of the team, chambers, or court premises** over generic
-> stock gavel/handshake images (per the brand brief). Optimise to `.webp` or
-> compressed `.jpg` for fast loading.
+> stock gavel/handshake images (per the brand brief). Optimise to `.webp` for fast loading.
 
 ## Where each image is wired
 
@@ -19,13 +18,13 @@ the code. Until a path is set, the site shows a tasteful branded placeholder.
 
 ## Example
 
-1. Add a file, e.g. `public/images/hero.jpg`.
+1. Add a file, e.g. `public/images/hero.webp`.
 2. Set the path (note the leading `/`, no `public`):
 
 ```ts
 // lib/site.ts
 images: {
-  hero: "/images/hero.jpg",
+  hero: "/images/hero.webp",
   // ...
 }
 ```

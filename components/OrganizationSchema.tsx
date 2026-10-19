@@ -1,4 +1,4 @@
-import { practiceAreas, site } from "@/lib/site";
+import { offices, practiceAreas, site } from "@/lib/site";
 
 /**
  * LegalService (an Organization subtype) structured data for the homepage.
@@ -18,17 +18,24 @@ export default function OrganizationSchema() {
     description: site.description,
     telephone: site.contact.phoneDisplay,
     email: site.contact.email,
-    image: `${base}/icon.svg`,
-    logo: `${base}/icon.svg`,
+    image: `${base}/images/emblem.webp`,
+    logo: `${base}/images/emblem.webp`,
     priceRange: "₹₹",
     address: {
       "@type": "PostalAddress",
       streetAddress: site.contact.addressLines.slice(0, -1).join(", "),
-      addressLocality: "New Delhi",
-      addressRegion: "Delhi",
-      postalCode: "110000",
+      addressLocality: "Jaipur",
+      addressRegion: "Rajasthan",
+      postalCode: "302015",
       addressCountry: "IN",
     },
+    location: offices.map((office) => ({
+      "@type": "Place",
+      name: office.name,
+      address: office.address,
+      hasMap: office.mapsUrl,
+      telephone: office.phones.map((phone) => phone.href),
+    })),
     areaServed: { "@type": "Country", name: "India" },
     knowsAbout: practiceAreas.map((a) => a.title),
     hasOfferCatalog: {
@@ -53,9 +60,10 @@ export default function OrganizationSchema() {
         "Thursday",
         "Friday",
         "Saturday",
+        "Sunday",
       ],
       opens: "10:00",
-      closes: "19:00",
+      closes: "21:00",
     },
     sameAs: Object.values(site.social).filter((url) => url && url !== "#"),
   };

@@ -8,7 +8,7 @@ import { getAllInsights } from "@/lib/insights";
 export const metadata: Metadata = {
   title: "Insights",
   description:
-    "Commentary and notes on legal developments from Shrimal & Associates - across criminal, matrimonial & family, service, civil & commercial, and PMLA law.",
+    "Commentary and notes on legal developments from Shrimal & Associates - across criminal, matrimonial & family, service, civil & commercial, taxation, arbitration, and PMLA law.",
 };
 
 export default function InsightsPage() {

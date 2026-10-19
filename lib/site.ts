@@ -15,13 +15,13 @@ export const site = {
   brandLine: "Advocacy. Integrity. Results.",
 
   description:
-    "Shrimal & Associates is a litigation-focused law firm representing clients across Indian courts in criminal, matrimonial & family, service, civil & commercial, and PMLA & special-legislation matters.",
+    "Shrimal & Associates is a litigation-focused law firm representing clients across Indian courts in criminal, matrimonial & family, service, civil & commercial, taxation, arbitration, and PMLA & special-legislation matters.",
 
-  url: "https://www.shrimalassociates.in",
+  url: "https://shrimalassociates.vercel.app",
 
   // ── Contact placeholders ──
   contact: {
-    // [PLACEHOLDER] Office address
+    // Office address
     addressLines: [
       "Ground Floor, 304",
       "Barkat Nagar, Tonk Phatak",
@@ -29,16 +29,16 @@ export const site = {
     ],
     addressInline:
       "Ground Floor, 304, Barkat Nagar, Tonk Phatak, Jaipur, Rajasthan 302015",
-    // [PLACEHOLDER] Google Maps link
+    // Google Maps link
     mapsUrl: "https://maps.app.goo.gl/3Fvudu5wAGFY5qNu9",
-    // [PLACEHOLDER] Embedded map query
+    // Embedded map query
     mapsEmbedQuery: "304, Barkat Nagar, Tonk Phatak, Jaipur, Rajasthan 302015",
-    // [PLACEHOLDER] Phone
+    // Phone
     phoneDisplay: "+91 99833 21035",
     phoneHref: "+919983321035",
     phone2Display: "+91 89495 69357",
     phone2Href: "+918949569357",
-    // [PLACEHOLDER] Email
+    // Email
     email: "contact@shrimalassociates.in",
     hours: "Mon – Sun · 10:00 AM – 9:00 PM",
   },
@@ -49,15 +49,45 @@ export const site = {
 
   /**
    * Photography slots. Drop real, well-lit images into /public/images/ and set
-   * the path here (e.g. "/images/hero.jpg"). Leave "" to show a branded
+   * the path here (e.g. "/images/hero.webp"). Leave "" to show a branded
    * placeholder. See /public/images/README.md for recommended dimensions.
    */
   images: {
     hero: "", // wide chambers / courthouse exterior - 1920×1080
-    about: "", // firm / chambers interior - 1200×1500 (portrait)
+    about: "/images/chambers.webp", // firm / chambers interior - 1200×1500 (portrait)
     office: "", // building exterior for the contact page - 1200×900
   },
 } as const;
+
+export const offices = [
+  {
+    name: "Jaipur Office",
+    address: site.contact.addressInline,
+    mapsUrl: site.contact.mapsUrl,
+    phones: [
+      { display: site.contact.phoneDisplay, href: site.contact.phoneHref },
+      { display: site.contact.phone2Display, href: site.contact.phone2Href },
+    ],
+  },
+  {
+    name: "Delhi Office",
+    address: "C-276, 2nd Floor, Defence Colony, New Delhi",
+    mapsUrl: "https://maps.app.goo.gl/pfppPk16CTdAjdTx5",
+    phones: [{ display: "+91 97111 79388", href: "+919711179388" }],
+  },
+  {
+    name: "Gurugram Office",
+    address: "1st Floor, A3-05, Westerlies Experion, Sector 108, Gurugram",
+    mapsUrl: "https://maps.app.goo.gl/Jt1LZszXcZLmPn4p8",
+    phones: [{ display: "+91 88606 62013", href: "+918860662013" }],
+  },
+  {
+    name: "Prayagraj Office",
+    address: "81/40 G, Sardar Patel Marg, Vasant Vihar Colony, Prayagraj",
+    mapsUrl: "https://maps.app.goo.gl/56jyjsBoHta5knTT8",
+    phones: [{ display: "+91 82998 37469", href: "+918299837469" }],
+  },
+];
 
 export type NavItem = { label: string; href: string };
 
@@ -219,6 +249,72 @@ export const practiceAreas: PracticeArea[] = [
     ],
   },
   {
+    slug: "taxation",
+    title: "Taxation",
+    short: "Advisory and representation in direct and indirect tax disputes.",
+    description:
+      "Advice and representation in income-tax, GST, and other tax disputes - from notices and assessment proceedings to appeals before tax authorities, tribunals, and courts.",
+    points: [
+      "Income-tax assessments & appeals",
+      "GST notices, demands & disputes",
+      "Tax recovery & interim relief",
+      "Tax advisory & compliance support",
+    ],
+    image: "",
+    overview: [
+      "Tax disputes call for a close reading of both the financial record and the reasons behind a demand. We assist individuals and businesses in understanding their position, preparing responses, and deciding how best to contest a disputed liability.",
+      "Our work covers income-tax and GST notices, assessments, demands, recovery proceedings, and appeals. We prepare submissions and represent clients before the relevant tax authorities, tribunals, and courts, with attention to deadlines and the documents needed at each stage.",
+      "We also advise on tax compliance and the implications of proposed transactions, helping clients identify issues early and maintain a clear record to support their position.",
+    ],
+    faqs: [
+      {
+        q: "What should I do after receiving a tax notice?",
+        a: "Keep the notice and supporting records, note the response deadline, and seek advice before replying. We review what is being asked and help prepare a response based on your documents.",
+      },
+      {
+        q: "Do you handle both income-tax and GST disputes?",
+        a: "Yes. We advise and represent clients in direct and indirect tax matters, including income-tax and GST disputes, according to the issues and forum involved.",
+      },
+      {
+        q: "What documents should I bring for an initial consultation?",
+        a: "Bring the notice or order, relevant returns, financial statements, transaction records, and any earlier correspondence with the department. We will identify any further documents needed after reviewing the matter.",
+      },
+    ],
+  },
+  {
+    slug: "arbitration",
+    title: "Arbitration",
+    short: "Handling arbitral proceedings and award-related disputes.",
+    description:
+      "Representation in contractual and commercial arbitrations - from reviewing the arbitration agreement and preparing claims to hearings, interim relief, and award-related court proceedings.",
+    points: [
+      "Arbitration agreements & dispute strategy",
+      "Appointment of arbitrators & interim relief",
+      "Claims, defence & arbitral hearings",
+      "Challenges to & enforcement of awards",
+    ],
+    image: "",
+    overview: [
+      "An arbitration needs the same preparation as a court case: a clear account of the dispute, an organised record, and a practical view of the relief sought. We represent businesses and individuals in contractual and commercial arbitrations.",
+      "We review arbitration agreements, advise on commencing or responding to proceedings, and assist with the appointment of arbitrators. Our work includes preparing claims and defences, handling evidence and hearings, and seeking interim protection where appropriate.",
+      "Our representation also extends to court proceedings concerning arbitral awards, including challenges and enforcement. Throughout, we keep the commercial objective, cost, and prospects of settlement in view.",
+    ],
+    faqs: [
+      {
+        q: "How do I know whether my dispute belongs in arbitration?",
+        a: "Start with the contract and any arbitration agreement. We review the dispute-resolution clause, the parties involved, and the nature of the dispute to advise on the appropriate next step.",
+      },
+      {
+        q: "Can you act if arbitration has already started?",
+        a: "Yes. Bring the agreement, notices, pleadings, procedural orders, and hearing schedule so we can assess the current stage and prepare the next steps.",
+      },
+      {
+        q: "Do you handle proceedings after an award is issued?",
+        a: "Yes. We review the award and advise on enforcement or a possible challenge, including the applicable deadlines and the available grounds in your matter.",
+      },
+    ],
+  },
+  {
     slug: "pmla-special-legislation",
     title: "PMLA & Special Legislation",
     short: "Defence in economic-offence & regulatory matters.",
@@ -257,7 +353,7 @@ export type Stat = { value: string; label: string };
 
 export const stats: Stat[] = [
   { value: "25+", label: "Years of combined practice" },
-  { value: "5", label: "Core practice areas" },
+  { value: String(practiceAreas.length), label: "Core practice areas" },
   { value: "1,100+", label: "Matters handled" },
   { value: "All", label: "Forums - trial to Supreme Court" },
 ];

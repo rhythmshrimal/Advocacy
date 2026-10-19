@@ -41,11 +41,11 @@ export async function generateMetadata({
 }
 
 // Internal links use the client router; external links open safely.
-function MdxLink({ href = "", ...props }: AnchorHTMLAttributes<HTMLAnchorElement>) {
+function MdxLink({ href = "", children, ...props }: AnchorHTMLAttributes<HTMLAnchorElement>) {
   if (href.startsWith("/")) {
-    return <Link href={href} {...props} />;
+    return <Link href={href} {...props}>{children}</Link>;
   }
-  return <a href={href} target="_blank" rel="noopener noreferrer" {...props} />;
+  return <a href={href} target="_blank" rel="noopener noreferrer" {...props}>{children}</a>;
 }
 
 export default async function InsightPage({

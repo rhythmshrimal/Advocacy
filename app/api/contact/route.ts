@@ -26,8 +26,21 @@ function escapeHtml(input: string): string {
 export async function POST(request: Request) {
   let body: ContactPayload;
   try {
-    body = (await request.json()) as ContactPayload;
+    const raw = await request.text();
+    if (new TextEncoder().encode(raw).length > 16_384) {
+      return NextResponse.json({ error: "Request is too large." }, { status: 413 });
+    }
+    body = JSON.parse(raw) as ContactPayload;
   } catch {
+    return NextResponse.json({ error: "Invalid request." }, { status: 400 });
+  }
+
+  if (
+    !body || typeof body !== "object" || Array.isArray(body) ||
+    [body.name, body.email, body.phone, body.message, body.company].some(
+      (value) => value !== undefined && typeof value !== "string"
+    )
+  ) {
     return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   }
 
@@ -61,6 +74,10 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Message is required." }, { status: 400 });
   }
 
+  if (name.length > 150 || email.length > 254 || message.length > 5000) {
+    return NextResponse.json({ error: "Please shorten your name, email, or message." }, { status: 400 });
+  }
+
   const { SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_USER, SMTP_PASS, SMTP_FROM, CONTACT_TO } =
     process.env;
 
@@ -81,6 +98,11 @@ export async function POST(request: Request) {
     port: Number(SMTP_PORT ?? 465),
     secure: String(SMTP_SECURE ?? "true") === "true",
     auth: { user: SMTP_USER, pass: SMTP_PASS },
+    connectionTimeout: 10_000,
+    greetingTimeout: 10_000,
+    socketTimeout: 20_000,
+    disableFileAccess: true,
+    disableUrlAccess: true,
   });
 
   const safe = {

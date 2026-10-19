@@ -59,11 +59,11 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Practice Areas"
             title="Where we focus"
-            intro="Five core areas of litigation, handled end to end - from first advice through to the final forum."
+            intro="Seven core areas of litigation, handled end to end - from first advice through to the final forum."
             align="center"
             className="mb-14"
           />
-          <RevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <RevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {practiceAreas.map((area, i) => (
               <RevealItem key={area.slug} className="h-full">
                 <PracticeCard area={area} index={i} />

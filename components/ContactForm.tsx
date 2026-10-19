@@ -31,7 +31,7 @@ function validate(values: {
 }
 
 const fieldBase =
-  "w-full rounded-sm border bg-white px-4 py-3 text-charcoal placeholder:text-slate-light/70 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gold/40";
+  "w-full rounded-xs border bg-white px-4 py-3 text-charcoal placeholder:text-slate-light/70 transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-gold/40";
 
 export default function ContactForm() {
   const [errors, setErrors] = useState<FieldErrors>({});
@@ -133,6 +133,7 @@ export default function ContactForm() {
             name="name"
             type="text"
             autoComplete="name"
+            maxLength={150}
             placeholder="Your full name"
             aria-invalid={!!errors.name}
             className={`${fieldBase} ${errors.name ? "border-red-400" : "border-navy/15"}`}
@@ -171,6 +172,7 @@ export default function ContactForm() {
             name="email"
             type="email"
             autoComplete="email"
+            maxLength={254}
             placeholder="Your email address"
             aria-invalid={!!errors.email}
             className={`${fieldBase} ${errors.email ? "border-red-400" : "border-navy/15"}`}
@@ -189,6 +191,7 @@ export default function ContactForm() {
             id="message"
             name="message"
             rows={5}
+            maxLength={5000}
             placeholder="Briefly describe your matter. Please do not share sensitive case details until we have established representation."
             aria-invalid={!!errors.message}
             className={`${fieldBase} resize-y ${errors.message ? "border-red-400" : "border-navy/15"}`}
@@ -208,7 +211,7 @@ export default function ContactForm() {
       {status === "error" && (
         <p
           role="alert"
-          className="mt-5 rounded-sm border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+          className="mt-5 rounded-xs border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
         >
           {serverMsg}
         </p>

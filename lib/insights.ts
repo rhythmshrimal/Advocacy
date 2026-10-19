@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import matter from "gray-matter";
+import { parseFrontmatter } from "./frontmatter";
 import readingTime from "reading-time";
 
 const INSIGHTS_DIR = path.join(process.cwd(), "content", "insights");
@@ -43,7 +43,7 @@ export function getAllInsights(): InsightMeta[] {
     .map((file) => {
       const slug = file.replace(/\.mdx$/, "");
       const raw = fs.readFileSync(path.join(INSIGHTS_DIR, file), "utf8");
-      const { data, content } = matter(raw);
+      const { data, content } = parseFrontmatter(raw);
       const fm = data as InsightFrontmatter;
       return {
         ...fm,
@@ -65,7 +65,7 @@ export type Author = {
   role: string;
   bio: string;
   initials: string;
-  /** Path under /public, e.g. "/images/team/founder.jpg". "" → initials avatar. */
+  /** Path under /public, e.g. "/images/team/founder.webp". "" → initials avatar. */
   image: string;
 };
 
@@ -77,12 +77,12 @@ export const authors: Record<string, Author> = {
   "Shrimal & Associates": {
     name: "Shrimal & Associates",
     role: "Advocates & Legal Consultants",
-    bio: "Shrimal & Associates is a litigation-focused firm representing clients across Indian courts in criminal, matrimonial, service, and economic-offence matters. Our writing distils practical, plain-language guidance from day-to-day courtroom experience.",
+    bio: "Shrimal & Associates is a litigation-focused firm representing clients across Indian courts in criminal, matrimonial, service, civil & commercial, taxation, arbitration, and economic-offence matters. Our writing distils practical, plain-language guidance from day-to-day courtroom experience.",
     initials: "SA",
     image: "",
   },
   // Add named advocates here, e.g.:
-  // "Adv. Full Name": { name: "Adv. Full Name", role: "Managing Advocate", bio: "…", initials: "FN", image: "/images/team/founder.jpg" },
+  // "Adv. Full Name": { name: "Adv. Full Name", role: "Managing Advocate", bio: "…", initials: "FN", image: "/images/team/founder.webp" },
 };
 
 const FIRM_AUTHOR = "Shrimal & Associates";
@@ -110,7 +110,7 @@ export function getInsight(slug: string): Insight | null {
   const file = path.join(INSIGHTS_DIR, `${slug}.mdx`);
   if (!fs.existsSync(file)) return null;
   const raw = fs.readFileSync(file, "utf8");
-  const { data, content } = matter(raw);
+  const { data, content } = parseFrontmatter(raw);
   const fm = data as InsightFrontmatter;
   if (fm.draft) return null;
   return {
