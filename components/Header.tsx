@@ -21,9 +21,13 @@ function PhoneIcon({ className = "" }: { className?: string }) {
 }
 
 export default function Header() {
+  const pathname = usePathname();
+  return <HeaderContent key={pathname} pathname={pathname} />;
+}
+
+function HeaderContent({ pathname }: { pathname: string }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -31,11 +35,6 @@ export default function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  // Close mobile menu on route change
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
 
   // Lock body scroll while mobile menu open
   useEffect(() => {
@@ -51,7 +50,7 @@ export default function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-brand ${
         solid
-          ? "bg-navy/95 shadow-header backdrop-blur-sm"
+          ? "bg-navy/95 shadow-header backdrop-blur-xs"
           : "bg-transparent"
       }`}
     >
@@ -59,7 +58,7 @@ export default function Header() {
         <Logo tone="light" />
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-7 lg:ml-auto lg:flex" aria-label="Primary">
           {nav.map((item) => {
             const active =
               item.href === "/"
@@ -82,23 +81,14 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="flex items-center gap-3">
-          {/* Phone CTA — always visible for clients in urgent situations */}
-          <a
-            href={`tel:${site.contact.phoneHref}`}
-            className="hidden items-center gap-2 rounded-sm border border-gold/60 px-4 py-2.5 text-sm font-semibold text-gold transition-colors duration-300 hover:bg-gold hover:text-white sm:inline-flex"
-          >
-            <PhoneIcon className="h-4 w-4" />
-            <span>{site.contact.phoneDisplay}</span>
-          </a>
-
+        <div className="flex items-center gap-3 lg:hidden">
           {/* Mobile menu toggle */}
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
-            className="relative z-50 flex h-11 w-11 flex-col items-center justify-center gap-[5px] rounded-sm text-offwhite lg:hidden"
+            className="relative z-50 flex h-11 w-11 flex-col items-center justify-center gap-[5px] rounded-xs text-offwhite lg:hidden"
           >
             <span
               className={`block h-0.5 w-6 bg-current transition-transform duration-300 ${

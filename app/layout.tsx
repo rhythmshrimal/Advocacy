@@ -21,8 +21,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.legalLine}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} - ${site.legalLine}`,
+    template: `%s - ${site.name}`,
   },
   description: site.description,
   keywords: [
@@ -31,12 +31,14 @@ export const metadata: Metadata = {
     "litigation",
     "criminal lawyer",
     "matrimonial lawyer",
+    "taxation lawyer",
+    "arbitration lawyer",
     "PMLA lawyer",
     "service law",
     "New Delhi advocate",
   ],
   openGraph: {
-    title: `${site.name} — ${site.legalLine}`,
+    title: `${site.name} - ${site.legalLine}`,
     description: site.description,
     url: site.url,
     siteName: site.name,
@@ -45,9 +47,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.legalLine}`,
+    title: `${site.name} - ${site.legalLine}`,
     description: site.description,
   },
+  icons: { icon: { url: "/icon.webp", type: "image/webp" } },
   robots: { index: true, follow: true },
 };
 
@@ -59,7 +62,7 @@ export default function RootLayout({
       <body className={`${playfair.variable} ${inter.variable}`}>
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-navy focus:px-4 focus:py-2 focus:text-offwhite"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xs focus:bg-navy focus:px-4 focus:py-2 focus:text-offwhite"
         >
           Skip to content
         </a>

@@ -65,7 +65,7 @@ export default function Reveal({
   );
 }
 
-/** Staggered container — children using `RevealItem` animate in sequence. */
+/** Staggered container - children using `RevealItem` animate in sequence. */
 export function RevealGroup({
   children,
   className = "",

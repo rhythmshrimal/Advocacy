@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
 
 const config: Config = {
   content: [
@@ -9,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Brand palette — see lib/site.ts and the brand brief
+        // Brand palette - see lib/site.ts and the brand brief
         navy: {
           DEFAULT: "#0E2A47",
           900: "#0A2038",
@@ -55,9 +56,28 @@ const config: Config = {
       animation: {
         "fade-up": "fade-up 0.7s cubic-bezier(0.22,1,0.36,1) both",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            "--tw-prose-body": "#1A1A1A",
+            "--tw-prose-headings": "#0E2A47",
+            "--tw-prose-links": "#967534",
+            "--tw-prose-bold": "#0E2A47",
+            "--tw-prose-quotes": "#0E2A47",
+            "--tw-prose-quote-borders": "#B08D45",
+            "--tw-prose-bullets": "#B08D45",
+            "--tw-prose-counters": "#B08D45",
+            maxWidth: "68ch",
+            h2: { fontFamily: "var(--font-playfair)", fontWeight: "600" },
+            h3: { fontFamily: "var(--font-playfair)", fontWeight: "600" },
+            a: { textDecoration: "none", fontWeight: "600" },
+            "a:hover": { textDecoration: "underline" },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [typography],
 };
 
 export default config;

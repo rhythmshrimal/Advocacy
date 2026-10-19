@@ -6,11 +6,13 @@ import Stats from "@/components/Stats";
 import CTA from "@/components/CTA";
 import Reveal, { RevealGroup, RevealItem } from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
-import { practiceAreas, values, matters, site } from "@/lib/site";
+import OrganizationSchema from "@/components/OrganizationSchema";
+import { practiceAreas, values, site } from "@/lib/site";
 
 export default function HomePage() {
   return (
     <>
+      <OrganizationSchema />
       <Hero />
 
       {/* ── Values strip ── */}
@@ -24,7 +26,7 @@ export default function HomePage() {
                   A litigation practice built on <span className="text-gold">trust</span>.
                 </>
               }
-              intro="Clients come to us at difficult moments — facing investigation, a contested separation, or a career on the line. Our role is to bring clarity, strategy, and steady advocacy to matters that matter most."
+              intro="Clients come to us at difficult moments - facing investigation, a contested separation, or a career on the line. Our role is to bring clarity, strategy, and steady advocacy to matters that matter most."
             />
             <Reveal delay={0.1}>
               <Link href="/about" className="link-underline mt-8">
@@ -57,11 +59,11 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Practice Areas"
             title="Where we focus"
-            intro="Five core areas of litigation, handled end to end — from first advice through to the final forum."
+            intro="Seven core areas of litigation, handled end to end - from first advice through to the final forum."
             align="center"
             className="mb-14"
           />
-          <RevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <RevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {practiceAreas.map((area, i) => (
               <RevealItem key={area.slug} className="h-full">
                 <PracticeCard area={area} index={i} />
@@ -111,49 +113,16 @@ export default function HomePage() {
             <span className="eyebrow mb-6 justify-center">{site.brandLine}</span>
             <p className="font-serif text-2xl font-medium leading-snug text-offwhite sm:text-3xl lg:text-[2.4rem] lg:leading-[1.25]">
               “We measure our work not by the cases we take, but by the trust our
-              clients place in us — and the outcomes we secure on their behalf.”
+              clients place in us and the outcomes we secure on their behalf.”
             </p>
           </Reveal>
         </div>
       </section>
 
       {/* ── Stats ── */}
-      <section className="bg-navy-900 pb-20 pt-0 lg:pb-28">
+      <section className="bg-navy-900 pb-10 pt-0 lg:pb-14">
         <div className="container-px -translate-y-10">
           <Stats />
-        </div>
-        {/* Experience teaser */}
-        <div className="container-px">
-          <div className="grid items-center gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-7">
-              <SectionHeading
-                tone="light"
-                eyebrow="Experience"
-                title="Tested across forums — trial to apex court"
-                intro="Representative, confidentiality-safe examples of the matters we handle."
-              />
-            </div>
-            <div className="lg:col-span-5">
-              <Reveal>
-                <Link href="/experience" className="btn-gold">
-                  View notable matters
-                </Link>
-              </Reveal>
-            </div>
-          </div>
-          <RevealGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {matters.slice(0, 3).map((m) => (
-              <RevealItem
-                key={m.area}
-                className="rounded-md border border-white/10 bg-white/[0.03] p-7"
-              >
-                <h3 className="font-serif text-lg text-gold-light">{m.area}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-offwhite/70">
-                  {m.summary}
-                </p>
-              </RevealItem>
-            ))}
-          </RevealGroup>
         </div>
       </section>
 

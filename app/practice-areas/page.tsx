@@ -8,7 +8,7 @@ import { practiceAreas } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Practice Areas",
   description:
-    "Criminal law, matrimonial & family law, service law, PMLA & special legislation, and civil litigation — handled end to end across Indian courts.",
+    "Criminal law, matrimonial & family law, service law, civil & commercial law, taxation, arbitration, and PMLA & special legislation - handled end to end across Indian courts.",
 };
 
 export default function PracticeAreasPage() {
@@ -17,7 +17,7 @@ export default function PracticeAreasPage() {
       <PageHero
         eyebrow="Practice Areas"
         title="Focused litigation, handled end to end"
-        intro="We concentrate on five core areas of dispute. Within each, we act at every stage — from first advice and interim relief through trial, appeal, and enforcement."
+        intro="We concentrate on seven core areas of dispute. Within each, we act at every stage - from first advice and interim relief through trial, appeal, and enforcement."
       />
 
       {/* Quick index */}
@@ -56,8 +56,8 @@ export default function PracticeAreasPage() {
                     <p className="mt-5 text-base leading-relaxed text-slate sm:text-lg">
                       {area.description}
                     </p>
-                    <Link href="/contact" className="link-underline mt-7">
-                      Discuss a {area.title.toLowerCase()} matter
+                    <Link href={`/practice-areas/${area.slug}`} className="link-underline mt-7">
+                      Read more about {area.title}
                       <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
                         <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>

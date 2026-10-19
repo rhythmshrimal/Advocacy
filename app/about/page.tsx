@@ -2,25 +2,26 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import CTA from "@/components/CTA";
+import Photo from "@/components/Photo";
 import Reveal, { RevealGroup, RevealItem } from "@/components/Reveal";
 import { values, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About the Firm",
   description:
-    "Shrimal & Associates is a litigation-focused law firm bringing clarity, strategy, and steady advocacy to criminal, matrimonial, service, and PMLA matters across Indian courts.",
+    "Shrimal & Associates is a litigation-focused law firm bringing clarity, strategy, and steady advocacy to criminal, matrimonial, service, civil & commercial, taxation, arbitration, and PMLA matters across Indian courts.",
 };
 
 const approach = [
   {
     step: "01",
     title: "Listen & assess",
-    body: "We begin by understanding your situation in full and giving you a frank assessment of where you stand — risks, options, and likely timelines.",
+    body: "We begin by understanding your situation in full and giving you a frank assessment of where you stand - risks, options, and likely timelines.",
   },
   {
     step: "02",
     title: "Build the strategy",
-    body: "We design a focused litigation strategy tailored to your objectives, the forum, and the facts — not a one-size-fits-all template.",
+    body: "We design a focused litigation strategy tailored to your objectives, the forum, and the facts - not a one-size-fits-all template.",
   },
   {
     step: "03",
@@ -51,9 +52,9 @@ export default function AboutPage() {
                 Shrimal &amp; Associates was founded on a simple conviction: that
                 rigorous preparation, candid advice, and disciplined advocacy are
                 what move difficult matters forward. Our practice spans criminal
-                defence, matrimonial and family disputes, service law, and
-                proceedings under the Prevention of Money Laundering Act and allied
-                special legislation.
+                law, matrimonial and family disputes, service law, civil and
+                commercial disputes, and proceedings under the Prevention of Money
+                Laundering Act and allied special legislation.
               </p>
               <p>
                 We appear before trial courts, tribunals, High Courts, and the
@@ -63,15 +64,26 @@ export default function AboutPage() {
               </p>
               <p>
                 We keep our practice deliberately focused. That focus lets us go
-                deep — on the law, on the facts, and on the human realities behind
+                deep - on the law, on the facts, and on the human realities behind
                 every matter we accept.
               </p>
             </Reveal>
           </div>
 
-          {/* Highlight card */}
+          {/* Image + highlight card */}
           <div className="lg:col-span-5">
-            <Reveal from="right" className="sticky top-28">
+            <Reveal from="right" className="space-y-6">
+              <div className="relative overflow-hidden rounded-md shadow-card">
+                <Photo
+                  src={site.images.about}
+                  alt="Shrimal & Associates chambers"
+                  label="Chambers / firm photo"
+                  width={1132}
+                  height={752}
+                  className="h-auto w-full"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+              </div>
               <div className="rounded-md border border-navy/8 bg-white p-8 shadow-card">
                 <p className="font-serif text-2xl italic leading-snug text-navy">
                   “{site.tagline}.”
@@ -83,7 +95,7 @@ export default function AboutPage() {
                       Focus
                     </dt>
                     <dd className="mt-1 text-slate">
-                      Litigation across criminal, family, service &amp; economic-offence law
+                      Litigation across criminal, family, service, civil, taxation, arbitration &amp; economic-offence law
                     </dd>
                   </div>
                   <div>
