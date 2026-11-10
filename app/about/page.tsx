@@ -79,7 +79,7 @@ export default function AboutPage() {
                   alt="Shrimal & Associates chambers"
                   label="Chambers / firm photo"
                   width={1132}
-                  height={752}
+                  height={849}
                   className="h-auto w-full"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
