@@ -54,7 +54,7 @@ export const site = {
    */
   images: {
     hero: "", // wide chambers / courthouse exterior - 1920×1080
-    about: "/images/chambers.webp", // firm / chambers interior - 1200×1500 (portrait)
+    about: "/images/chambers.webp", // firm / chambers interior
     office: "", // building exterior for the contact page - 1200×900
   },
 } as const;
